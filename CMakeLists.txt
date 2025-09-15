@@ -14,4 +14,5 @@ add_executable(BaseGameEngine
         TVector2D.h
         AnimatedSprite.cpp
         AnimatedSprite.h
-        GlobalConstants.h)
+        GlobalConstants.h
+        EActorType.h)
