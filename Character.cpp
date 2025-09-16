@@ -24,7 +24,7 @@ void Character::Tick(const float fElapsedTime)
 
 }
 
-void Character::Draw(const float fElapsedTime, const TVector2D<float> InLocation)
+void Character::Draw(const float fElapsedTime, const olc::vf2d InLocation) const
 {
     Sprite->Draw(fElapsedTime, InLocation);
 }

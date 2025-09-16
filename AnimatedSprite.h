@@ -19,8 +19,8 @@ enum class EAnimationType
 
 struct FAnimSequence
 {
-    TVector2D<int> FirstFrameOffset = { 0,0 };
-    TVector2D<int> SpriteSize = { SpriteSizeConst , SpriteSizeConst };
+    olc::vi2d FirstFrameOffset = { 0,0 };
+    olc::vi2d SpriteSize = { SpriteSizeConst , SpriteSizeConst };
     int NumberOfFrames = 4;
     float Duration = 4.f;
     int SpriteScale = 2;
@@ -31,13 +31,13 @@ class AnimatedSprite
 {
 public:
     AnimatedSprite(const std::shared_ptr<olc::Sprite>& Tiles, EAnimationType Type, const FAnimSequence& Sequence);
-    void Draw(float fElapsedTime, TVector2D<float> InPosition);
-    TVector2D<int> GetSpriteSize() const;
-    void EditAnimSequence(TVector2D<int>& NewOffset, TVector2D<int>& NewSize, int NewNumFrames, float NewDuration);
-    void EditAnimSequence(TVector2D<int>& NewOffset);
+    void Draw(float fElapsedTime, olc::vf2d InPosition) const;
+    olc::vi2d GetSpriteSize() const;
+    void EditAnimSequence(const olc::vi2d& NewOffset, const olc::vi2d& NewSize, int NewNumFrames, float NewDuration) const;
+    void EditAnimSequence(const olc::vi2d& NewOffset) const;
 
 protected:
-    const std::shared_ptr<olc::Sprite>& TileSet;
+    const std::shared_ptr<olc::Sprite>& SpriteSheet;
     EAnimationType AnimationType;
     FAnimSequence& AnimationSequence;
     float AnimStartTime = 0.f;

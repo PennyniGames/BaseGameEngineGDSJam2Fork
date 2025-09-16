@@ -81,6 +81,23 @@ void GameWorld::UpdateCollisions()
 
 void GameWorld::TickEverything(float fElapsedTime)
 {
+    for (const auto& actor : NonColliding)
+    {
+        if (actor)
+            actor->Tick(fElapsedTime);
+    }
+
+    for (const auto& actor : EverythingCollidable)
+    {
+        if (actor)
+            actor->Tick(fElapsedTime);
+    }
+
+    for (const auto& character : EverythingCollidableThatMoves)
+    {
+        if (character)
+            character->Tick(fElapsedTime);
+    }
 }
 
 bool GameWorld::CheckCollision(const Character &FirstObject, const Actor &SecondObject)

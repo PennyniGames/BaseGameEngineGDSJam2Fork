@@ -6,8 +6,10 @@
 #define GLOBALCONSTANTS_H
 
 constexpr int PIXEL_SIZE = 2;
-constexpr int SCREEN_WIDTH = 512;
-constexpr int SCREEN_HEIGHT = 512;
+constexpr int SCREEN_WIDTH = 700;
+constexpr int SCREEN_HEIGHT = 700;
 
-constexpr int SpriteSizeConst = 12;
+constexpr int SpriteSizeConst = 8;
+constexpr int SpriteSheetGapOffset = 1;
+
 #endif //GLOBALCONSTANTS_H

@@ -6,7 +6,6 @@
 #define ACTOR_H
 #include "AnimatedSprite.h"
 #include "olcPixelGameEngine.h"
-#include "TVector2D.h"
 
 
 class Actor
@@ -14,21 +13,16 @@ class Actor
 public:
 
     Actor();
-    virtual ~Actor()
-    {
-        delete Sprite;
-    }
+    virtual ~Actor() = default;
     virtual void Tick(float fElapsedTime) = 0;
     virtual void Collide(Actor* Other) = 0;
-    virtual void Draw(float fElapsedTime, olc::vf2d<float> InLocation) = 0;
-    TVector2D<float> GetPosition() const;
-    virtual TVector2D<int> GetSpriteSize() const;
+    virtual void Draw(float fElapsedTime, olc::vf2d InLocation) const = 0;
+    olc::vf2d GetPosition() const;
+    virtual olc::vi2d GetSpriteSize() const;
 
 protected:
-    TVector2D<float> Position = { 0,0 };
+    olc::vf2d Position = { 0,0 };
     std::shared_ptr<AnimatedSprite> Sprite = nullptr;
 };
-
-
 
 #endif //ACTOR_H

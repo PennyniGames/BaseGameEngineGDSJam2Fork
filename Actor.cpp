@@ -10,12 +10,12 @@ Actor::Actor()
 
 }
 
-TVector2D<float> Actor::GetPosition() const
+olc::vf2d Actor::GetPosition() const
 {
     return Position;
 }
 
-TVector2D<int> Actor::GetSpriteSize() const
+olc::vi2d Actor::GetSpriteSize() const
 {
     if (Sprite == nullptr)
     {

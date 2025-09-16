@@ -12,7 +12,7 @@ class Character : public Actor
 public:
     Character();
     void Tick(float fElapsedTime) override;
-    void Draw(float fElapsedTime, TVector2D<float> InLocation) override;
+    void Draw(float fElapsedTime, olc::vf2d InLocation) const override;
     virtual void Move(float fElapsedTime) = 0;
     virtual void BounceOff() = 0;
 
